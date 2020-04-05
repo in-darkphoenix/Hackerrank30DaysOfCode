@@ -1,23 +1,24 @@
 package day21to30;
 
 import java.util.*;
-import java.io.*;
-class Node{
-    Node left,right;
+class Node1{
+    Node1 left,right;
     int data;
-    Node(int data){
+    Node1(int data){
         this.data=data;
         left=right=null;
     }
 }
-class BSTLO$23{
 
-static void levelOrder(Node root){
-          Queue<Node> queue = new LinkedList();
+ class BSTLO$23{
+	
+
+static void levelOrder(Node1 root){
+          Queue<Node1> queue = new LinkedList();
     queue.add(root);
     
     while(!queue.isEmpty()){
-        Node current = queue.remove();
+        Node1 current = queue.remove();
         System.out.print(current.data+" ");
         if (current.left!=null) queue.add(current.left);
         if (current.right!=null) queue.add(current.right);
@@ -25,12 +26,12 @@ static void levelOrder(Node root){
       
     }
 
-public static Node insert(Node root,int data){
+public static Node1 insert(Node1 root,int data){
         if(root==null){
-            return new Node(data);
+            return new Node1(data);
         }
         else{
-            Node cur;
+            Node1 cur;
             if(data<=root.data){
                 cur=insert(root.left,data);
                 root.left=cur;
@@ -45,7 +46,7 @@ public static Node insert(Node root,int data){
     public static void main(String args[]){
             Scanner sc=new Scanner(System.in);
             int T=sc.nextInt();
-            Node root=null;
+            Node1 root=null;
             while(T-->0){
                 int data=sc.nextInt();
                 root=insert(root,data);
